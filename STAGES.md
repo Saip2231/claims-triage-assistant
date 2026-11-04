@@ -21,7 +21,7 @@
 | 4 | Engine + CLI → decisions.csv | [stage-04](prompts/stage-04-engine-cli.md) | `engine.py`, `export.py`, `run_batch.py` | ✅ |
 | 🚧 | **Gate A:** all 10 decisions match the golden table | | | ✅ |
 | 5 | Policy parser + explanations + advisories | [stage-05](prompts/stage-05-policy-explanations.md) | `policy.py`, `explain.py`, `advisories.py` | ✅ |
-| 6 | FastAPI backend + error handling | [stage-06](prompts/stage-06-api.md) | `api.py` + API tests | ⬜ |
+| 6 | FastAPI backend + error handling | [stage-06](prompts/stage-06-api.md) | `api.py` + API tests | ✅ |
 | 7 | React UI | [stage-07](prompts/stage-07-react-ui.md) | `frontend/` working against the API | ⬜ |
 | 🚧 | **Gate B:** full flow works in your browser | | | ⬜ |
 | 8 | Tests + hardening | [stage-08](prompts/stage-08-tests-hardening.md) | robustness + end-to-end tests, all green | ⬜ |
@@ -67,9 +67,9 @@
 - [x] User reviewed the explanation wording
 
 ### Stage 6: API
-- [ ] `/api/health` and `/api/triage`
-- [ ] Error matrix covered by TestClient tests
-- [ ] Serves `frontend/dist` when present
+- [x] `/api/health` and `/api/triage`
+- [x] Error matrix covered by TestClient tests
+- [x] Serves `frontend/dist` when present; redirects `/` to `/docs` until then
 
 ### Stage 7: React UI
 - [ ] Three upload zones with type validation
@@ -104,3 +104,4 @@
 | 2026-11-04 | 3 | ✅ checks.py (6 pure checks) + factories; test_checks.py 40/40; full suite 87/87 |
 | 2026-11-04 | 4 | ✅ engine.py, export.py, run_batch.py; 117/117 tests. **Gate A passed:** 10 claims from 20 files, 4 APPROVE / 2 DENY / 4 NEEDS_HUMAN, every row matches the golden table |
 | 2026-11-04 | 5 | ✅ policy.py, advisories.py, explain.py (template, no LLM); 168/168 tests; decisions unchanged; user approved wording. run_batch now reports a locked output file clearly |
+| 2026-11-04 | 6 | ✅ api.py + schemas.py; 181/181 tests, no warnings; curl on CLM-0004 → DENY/ELIG-01/R101 with citation; /docs loads |
