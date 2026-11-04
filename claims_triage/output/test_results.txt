@@ -1,0 +1,21 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.11.4, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\Users\Sai Prashanth\Downloads\Interview\claims_triage\backend
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.16.0
+collected 203 items
+
+tests\test_api.py .............                                          [  6%]
+tests\test_checks.py ........................................            [ 26%]
+tests\test_end_to_end.py ..                                              [ 27%]
+tests\test_engine.py ...........                                         [ 32%]
+tests\test_explain.py .................................................. [ 57%]
+.                                                                        [ 57%]
+tests\test_export.py ....                                                [ 59%]
+tests\test_extract.py ..................................                 [ 76%]
+tests\test_golden.py ...............                                     [ 83%]
+tests\test_reference.py .............                                    [ 90%]
+tests\test_robustness.py ....................                            [100%]
+
+============================= 203 passed in 5.79s =============================

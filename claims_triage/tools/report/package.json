@@ -1,0 +1,13 @@
+{
+  "name": "claims-triage-report",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Builds a Word document with the project's outputs and full source code.",
+  "type": "module",
+  "scripts": {
+    "build": "node build_report.mjs"
+  },
+  "dependencies": {
+    "docx": "^9.0.0"
+  }
+}

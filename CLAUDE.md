@@ -197,6 +197,7 @@ A row whose claim ID is unknown uses the **file name** as `claim_id`.
 
 - **Backend (Python 3.11):** `fastapi`, `uvicorn[standard]`, `python-multipart`, `pypdf`, `openpyxl`, `pandas`, `pytest`, `httpx` (for FastAPI's TestClient)
 - **Frontend:** `react`, `react-dom`, `vite`, `typescript`, `@vitejs/plugin-react`, `lucide-react` (icons), `@fontsource/ibm-plex-sans`, `@fontsource/ibm-plex-mono`. Hand-written CSS with design tokens; **no** UI component library and no Streamlit.
+- **Report tool only** (`claims_triage/tools/report`, not part of the app): `docx` (npm), used to build the Word document of outputs and code. The user requested it on 2026-11-04.
 
 ## 6. Golden results (the 10 provided claims): the regression target
 
