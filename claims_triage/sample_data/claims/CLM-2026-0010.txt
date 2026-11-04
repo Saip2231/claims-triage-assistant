@@ -1,0 +1,70 @@
+==============================================================================
+HEALTH INSURANCE CLAIM SUBMISSION (SYNTHETIC)
+CMS-1500-style layout, plain-text version
+SYNTHETIC DATA for interview exercise. Fictional people, providers and organizations.
+==============================================================================
+
+[SECTION 0] CLAIM HEADER
+------------------------------------------------------------------------------
+Claim ID                : CLM-2026-0010
+Date received           : 2026-10-23
+Submission format       : EDI 837P + PDF
+Claim frequency code    : 1  (1=original, 7=replacement, 8=void)
+
+[SECTION 1] PATIENT / INSURED
+------------------------------------------------------------------------------
+Member ID               : MBR-100093
+Relationship to insured : Self
+Birth year              : 1988
+Sex                     : M
+
+[SECTION 2] BILLING PROVIDER
+------------------------------------------------------------------------------
+Provider ID             : P-010
+Provider name           : Clearwater Behavioral Health (synthetic)
+Specialty               : Behavioral Health
+Billing NPI             : 9000000010
+Rendering provider NPI  : 9000000010
+Place of service        : 10 - Telehealth (patient home)
+
+[SECTION 3] DIAGNOSIS AND AUTHORIZATION
+------------------------------------------------------------------------------
+Date of service         : 2026-10-19
+A. Primary diagnosis    : F41.1
+B. Secondary diagnosis  : None
+Prior auth number       : None provided
+Emergency indicator     : N
+Attachments submitted   : DOC-C010-01
+
+[SECTION 4] SERVICE LINES
+------------------------------------------------------------------------------
+Line DOS         POS  CPT     Mod  DxPtr  Units    Charge (USD)
+1    2026-10-19  10   90837   95   A      1              220.00
+                                             -------------------
+                                  TOTAL CHARGE        220.00
+                                   AMOUNT PAID          0.00
+
+[SECTION 5] PROVIDER CERTIFICATION
+------------------------------------------------------------------------------
+Signature on file (synthetic). The provider certifies that the services listed
+were rendered and that the information is true and complete.
+
+==============================================================================
+[ATTACHMENT 1 of 1] submitted with CLM-2026-0010
+==============================================================================
+DOC-C010-01 | Provider Request for Additional Visits (submitted with CLM-2026-0010)
+------------------------------------------------------------------------------
+Provider: Clearwater Behavioral Health (synthetic) | Date: 2026-10-19
+Patient: MBR-100093 (38-year-old male)
+  | Session 13 of ongoing treatment for generalized anxiety disorder
+  | (F41.1), delivered by telehealth. GAD-7 score at intake in 2026-03: 17
+  | (severe). Current GAD-7: 14 (moderate). Patient is improving but has
+  | not reached remission. A treatment plan with cognitive behavioral
+  | therapy goals is attached. Provider requests authorization for 8
+  | additional sessions. Early discontinuation carries documented risk of
+  | relapse.
+
+
+==============================================================================
+END OF CLAIM CLM-2026-0010
+==============================================================================

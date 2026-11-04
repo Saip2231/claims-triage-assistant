@@ -1,0 +1,77 @@
+==============================================================================
+HEALTH INSURANCE CLAIM SUBMISSION (SYNTHETIC)
+CMS-1500-style layout, plain-text version
+SYNTHETIC DATA for interview exercise. Fictional people, providers and organizations.
+==============================================================================
+
+[SECTION 0] CLAIM HEADER
+------------------------------------------------------------------------------
+Claim ID                : CLM-2026-0005
+Date received           : 2026-10-12
+Submission format       : EDI 837I/P + PDF
+Claim frequency code    : 1  (1=original, 7=replacement, 8=void)
+
+[SECTION 1] PATIENT / INSURED
+------------------------------------------------------------------------------
+Member ID               : MBR-100056
+Relationship to insured : Self
+Birth year              : 1968
+Sex                     : M
+
+[SECTION 2] BILLING PROVIDER
+------------------------------------------------------------------------------
+Provider ID             : P-009
+Provider name           : Cedar Valley Regional Hospital - Emergency Dept (synthetic)
+Specialty               : Hospital Emergency
+Billing NPI             : 9000000009
+Rendering provider NPI  : 9000000009
+Place of service        : 23 - Emergency room
+
+[SECTION 3] DIAGNOSIS AND AUTHORIZATION
+------------------------------------------------------------------------------
+Date of service         : 2026-10-03
+A. Primary diagnosis    : R07.9
+B. Secondary diagnosis  : None
+Prior auth number       : None provided
+Emergency indicator     : Y
+Attachments submitted   : DOC-C005-01
+
+[SECTION 4] SERVICE LINES
+------------------------------------------------------------------------------
+Line DOS         POS  CPT     Mod  DxPtr  Units    Charge (USD)
+1    2026-10-03  23   99285        A      1            2,850.00
+2    2026-10-03  23   93000        A      1              220.00
+3    2026-10-03  23   71046        A      1              480.00
+                                             -------------------
+                                  TOTAL CHARGE      3,550.00
+                                   AMOUNT PAID          0.00
+
+[SECTION 5] PROVIDER CERTIFICATION
+------------------------------------------------------------------------------
+Signature on file (synthetic). The provider certifies that the services listed
+were rendered and that the information is true and complete.
+
+==============================================================================
+[ATTACHMENT 1 of 1] submitted with CLM-2026-0005
+==============================================================================
+DOC-C005-01 | Emergency Department Visit Summary (submitted with CLM-2026-0005)
+------------------------------------------------------------------------------
+Facility: Cedar Valley Regional Hospital, Emergency Dept (synthetic, out-of-
+network on all plans) | Date of service: 2026-10-03
+Patient: MBR-100056 (58-year-old male)
+  | Arrival: 21:40 by private vehicle, walked in. Triage: ESI level 2.
+  | Chief complaint: Chest pressure radiating to left arm for 30 minutes,
+  | with sweating.
+  | Workup: ECG: normal sinus rhythm, no acute ST changes. Chest X-ray 2
+  | views: no acute findings. Cardiac enzyme tests: negative x2 (billed
+  | separately by hospital lab, not on this claim).
+  | Disposition: Discharged 02:15 with outpatient cardiology follow-up.
+  | Not admitted.
+  | Final diagnosis: Chest pain, unspecified (R07.9).
+  | Notes: Nearest in-network facility is approximately 38 miles away.
+  | Patient did not choose this facility for convenience.
+
+
+==============================================================================
+END OF CLAIM CLM-2026-0005
+==============================================================================

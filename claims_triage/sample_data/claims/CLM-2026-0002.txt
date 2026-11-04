@@ -1,0 +1,58 @@
+==============================================================================
+HEALTH INSURANCE CLAIM SUBMISSION (SYNTHETIC)
+CMS-1500-style layout, plain-text version
+SYNTHETIC DATA for interview exercise. Fictional people, providers and organizations.
+==============================================================================
+
+[SECTION 0] CLAIM HEADER
+------------------------------------------------------------------------------
+Claim ID                : CLM-2026-0002
+Date received           : 2026-10-21
+Submission format       : EDI 837P
+Claim frequency code    : 1  (1=original, 7=replacement, 8=void)
+
+[SECTION 1] PATIENT / INSURED
+------------------------------------------------------------------------------
+Member ID               : MBR-100019
+Relationship to insured : Self
+Birth year              : 1971
+Sex                     : M
+
+[SECTION 2] BILLING PROVIDER
+------------------------------------------------------------------------------
+Provider ID             : P-003
+Provider name           : Harbor Internal Medicine (synthetic)
+Specialty               : Internal Medicine
+Billing NPI             : 9000000003
+Rendering provider NPI  : 9000000003
+Place of service        : 11 - Office
+
+[SECTION 3] DIAGNOSIS AND AUTHORIZATION
+------------------------------------------------------------------------------
+Date of service         : 2026-10-08
+A. Primary diagnosis    : I10
+B. Secondary diagnosis  : None
+Prior auth number       : None provided
+Emergency indicator     : N
+Attachments submitted   : None
+
+[SECTION 4] SERVICE LINES
+------------------------------------------------------------------------------
+Line DOS         POS  CPT     Mod  DxPtr  Units    Charge (USD)
+1    2026-10-08  11   99214        A      1              210.00
+                                             -------------------
+                                  TOTAL CHARGE        210.00
+                                   AMOUNT PAID          0.00
+
+[SECTION 5] PROVIDER CERTIFICATION
+------------------------------------------------------------------------------
+Signature on file (synthetic). The provider certifies that the services listed
+were rendered and that the information is true and complete.
+
+==============================================================================
+[ATTACHMENTS] None submitted with this claim.
+==============================================================================
+
+==============================================================================
+END OF CLAIM CLM-2026-0002
+==============================================================================

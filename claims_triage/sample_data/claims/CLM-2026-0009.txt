@@ -1,0 +1,71 @@
+==============================================================================
+HEALTH INSURANCE CLAIM SUBMISSION (SYNTHETIC)
+CMS-1500-style layout, plain-text version
+SYNTHETIC DATA for interview exercise. Fictional people, providers and organizations.
+==============================================================================
+
+[SECTION 0] CLAIM HEADER
+------------------------------------------------------------------------------
+Claim ID                : CLM-2026-0009
+Date received           : 2026-10-22
+Submission format       : Scanned PDF (OCR)
+Claim frequency code    : 1  (1=original, 7=replacement, 8=void)
+
+[SECTION 1] PATIENT / INSURED
+------------------------------------------------------------------------------
+Member ID               : MBR-100085
+Relationship to insured : Self
+Birth year              : 1980
+Sex                     : F
+
+[SECTION 2] BILLING PROVIDER
+------------------------------------------------------------------------------
+Provider ID             : P-008
+Provider name           : Oakridge Family Practice (synthetic)
+Specialty               : Family Medicine
+Billing NPI             : 9000000008
+Rendering provider NPI  : (blank)
+Place of service        : 11 - Office
+
+[SECTION 3] DIAGNOSIS AND AUTHORIZATION
+------------------------------------------------------------------------------
+Date of service         : 2026-10-16
+A. Primary diagnosis    : J06.99
+B. Secondary diagnosis  : None
+Prior auth number       : None provided
+Emergency indicator     : N
+Attachments submitted   : DOC-C009-01
+
+[SECTION 4] SERVICE LINES
+------------------------------------------------------------------------------
+Line DOS         POS  CPT     Mod  DxPtr  Units    Charge (USD)
+1    2026-10-16  11   99213        A      1              150.00
+                                             -------------------
+                                  TOTAL CHARGE        150.00
+                                   AMOUNT PAID          0.00
+
+[SECTION 5] PROVIDER CERTIFICATION
+------------------------------------------------------------------------------
+Signature on file (synthetic). The provider certifies that the services listed
+were rendered and that the information is true and complete.
+
+==============================================================================
+[ATTACHMENT 1 of 1] submitted with CLM-2026-0009
+==============================================================================
+DOC-C009-01 | OCR Output of Scanned Claim Form (submitted as CLM-2026-0009)
+------------------------------------------------------------------------------
+Source: Scanned PDF, 1 page | OCR engine confidence (overall): 0.71
+  Field                  | OCR text                 | Confidence
+  -----------------------+--------------------------+---------------------------------------
+  Member ID              | MBR-100085               | 0.97
+  Billing provider       | Oakridge Family Practice | 0.93
+  Rendering provider NPI | (blank)                  | n/a
+  Date of service        | 10/16/2026               | 0.95
+  Diagnosis code 1       | J06.99                   | 0.62 (smudged; last character unclear)
+  CPT                    | 99213                    | 0.96
+  Charge                 | 150.00                   | 0.98
+
+
+==============================================================================
+END OF CLAIM CLM-2026-0009
+==============================================================================

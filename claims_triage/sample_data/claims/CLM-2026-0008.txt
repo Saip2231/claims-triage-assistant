@@ -1,0 +1,72 @@
+==============================================================================
+HEALTH INSURANCE CLAIM SUBMISSION (SYNTHETIC)
+CMS-1500-style layout, plain-text version
+SYNTHETIC DATA for interview exercise. Fictional people, providers and organizations.
+==============================================================================
+
+[SECTION 0] CLAIM HEADER
+------------------------------------------------------------------------------
+Claim ID                : CLM-2026-0008
+Date received           : 2026-10-14
+Submission format       : EDI 837P + PDF
+Claim frequency code    : 1  (1=original, 7=replacement, 8=void)
+
+[SECTION 1] PATIENT / INSURED
+------------------------------------------------------------------------------
+Member ID               : MBR-100078
+Relationship to insured : Self
+Birth year              : 1996
+Sex                     : F
+
+[SECTION 2] BILLING PROVIDER
+------------------------------------------------------------------------------
+Provider ID             : P-006
+Provider name           : Aurora Plastic & ENT Clinic (synthetic)
+Specialty               : Plastic Surgery / ENT
+Billing NPI             : 9000000006
+Rendering provider NPI  : 9000000006
+Place of service        : 24 - Ambulatory surgery center
+
+[SECTION 3] DIAGNOSIS AND AUTHORIZATION
+------------------------------------------------------------------------------
+Date of service         : 2026-10-05
+A. Primary diagnosis    : Z41.1
+B. Secondary diagnosis  : None
+Prior auth number       : None provided
+Emergency indicator     : N
+Attachments submitted   : DOC-C008-01
+
+[SECTION 4] SERVICE LINES
+------------------------------------------------------------------------------
+Line DOS         POS  CPT     Mod  DxPtr  Units    Charge (USD)
+1    2026-10-05  24   30400        A      1            9,800.00
+                                             -------------------
+                                  TOTAL CHARGE      9,800.00
+                                   AMOUNT PAID          0.00
+
+[SECTION 5] PROVIDER CERTIFICATION
+------------------------------------------------------------------------------
+Signature on file (synthetic). The provider certifies that the services listed
+were rendered and that the information is true and complete.
+
+==============================================================================
+[ATTACHMENT 1 of 1] submitted with CLM-2026-0008
+==============================================================================
+DOC-C008-01 | Consultation / Operative Planning Note (submitted with CLM-2026-0008)
+------------------------------------------------------------------------------
+Clinic: Aurora Plastic & ENT Clinic (synthetic) | Date: 2026-09-22 (consult),
+procedure performed 2026-10-05
+Patient: MBR-100078 (30-year-old female)
+  | Reason for consult: Patient requests change in nasal shape and tip
+  | appearance.
+  | History: Denies nasal obstruction, snoring, recurrent sinus infections
+  | or prior nasal trauma.
+  | Exam: Straight septum, patent airways bilaterally. No functional
+  | impairment noted.
+  | Plan: Elective primary rhinoplasty for aesthetic improvement. Patient
+  | informed that insurance coverage is unlikely.
+
+
+==============================================================================
+END OF CLAIM CLM-2026-0008
+==============================================================================

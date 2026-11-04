@@ -1,0 +1,17 @@
+# Original interview handouts: kept local, never pushed
+/Interview/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node
+node_modules/
+claims_triage/frontend/dist/
+
+# Submission artefacts and OS noise
+*.zip
+.DS_Store
+Thumbs.db

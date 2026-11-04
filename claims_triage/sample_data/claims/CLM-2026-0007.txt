@@ -1,0 +1,73 @@
+==============================================================================
+HEALTH INSURANCE CLAIM SUBMISSION (SYNTHETIC)
+CMS-1500-style layout, plain-text version
+SYNTHETIC DATA for interview exercise. Fictional people, providers and organizations.
+==============================================================================
+
+[SECTION 0] CLAIM HEADER
+------------------------------------------------------------------------------
+Claim ID                : CLM-2026-0007
+Date received           : 2026-10-16
+Submission format       : EDI 837P + PDF
+Claim frequency code    : 1  (1=original, 7=replacement, 8=void)
+
+[SECTION 1] PATIENT / INSURED
+------------------------------------------------------------------------------
+Member ID               : MBR-100071
+Relationship to insured : Self
+Birth year              : 1993
+Sex                     : M
+
+[SECTION 2] BILLING PROVIDER
+------------------------------------------------------------------------------
+Provider ID             : P-007
+Provider name           : Greenway Urgent & Primary Care (synthetic)
+Specialty               : Family Medicine
+Billing NPI             : 9000000007
+Rendering provider NPI  : 9000000007
+Place of service        : 11 - Office
+
+[SECTION 3] DIAGNOSIS AND AUTHORIZATION
+------------------------------------------------------------------------------
+Date of service         : 2026-10-10
+A. Primary diagnosis    : L30.9
+B. Secondary diagnosis  : None
+Prior auth number       : None provided
+Emergency indicator     : N
+Attachments submitted   : DOC-C007-01
+
+[SECTION 4] SERVICE LINES
+------------------------------------------------------------------------------
+Line DOS         POS  CPT     Mod  DxPtr  Units    Charge (USD)
+1    2026-10-10  11   99215        A      1              310.00
+                                             -------------------
+                                  TOTAL CHARGE        310.00
+                                   AMOUNT PAID          0.00
+
+[SECTION 5] PROVIDER CERTIFICATION
+------------------------------------------------------------------------------
+Signature on file (synthetic). The provider certifies that the services listed
+were rendered and that the information is true and complete.
+
+==============================================================================
+[ATTACHMENT 1 of 1] submitted with CLM-2026-0007
+==============================================================================
+DOC-C007-01 | Progress Note Excerpt (submitted with CLM-2026-0007)
+------------------------------------------------------------------------------
+Clinic: Greenway Urgent & Primary Care (synthetic) | Date of service:
+2026-10-10
+Patient: MBR-100071 (33-year-old male)
+  | Reason for visit: Itchy red rash on right forearm for 3 days after
+  | yard work.
+  | Exam: Mild erythema with small papules, right forearm. No signs of
+  | infection. No systemic symptoms.
+  | Assessment: Contact dermatitis, localized (coded L30.9).
+  | Plan: Hydrocortisone cream twice daily for 7 days. Avoid irritant.
+  | Return if no improvement.
+  | Total visit time: 12 minutes. Medical decision making:
+  | Straightforward. 1 self-limited problem, OTC/low-risk management.
+
+
+==============================================================================
+END OF CLAIM CLM-2026-0007
+==============================================================================

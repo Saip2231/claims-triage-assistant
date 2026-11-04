@@ -1,0 +1,75 @@
+==============================================================================
+HEALTH INSURANCE CLAIM SUBMISSION (SYNTHETIC)
+CMS-1500-style layout, plain-text version
+SYNTHETIC DATA for interview exercise. Fictional people, providers and organizations.
+==============================================================================
+
+[SECTION 0] CLAIM HEADER
+------------------------------------------------------------------------------
+Claim ID                : CLM-2026-0006
+Date received           : 2026-10-19
+Submission format       : EDI 837P
+Claim frequency code    : 1  (1=original, 7=replacement, 8=void)
+
+[SECTION 1] PATIENT / INSURED
+------------------------------------------------------------------------------
+Member ID               : MBR-100063
+Relationship to insured : Self
+Birth year              : 1964
+Sex                     : F
+
+[SECTION 2] BILLING PROVIDER
+------------------------------------------------------------------------------
+Provider ID             : P-004
+Provider name           : Meridian Diagnostics Lab (synthetic)
+Specialty               : Clinical Laboratory
+Billing NPI             : 9000000004
+Rendering provider NPI  : 9000000004
+Place of service        : 81 - Independent laboratory
+
+[SECTION 3] DIAGNOSIS AND AUTHORIZATION
+------------------------------------------------------------------------------
+Date of service         : 2026-10-15
+A. Primary diagnosis    : E11.9
+B. Secondary diagnosis  : None
+Prior auth number       : None provided
+Emergency indicator     : N
+Attachments submitted   : DOC-C006-01
+
+[SECTION 4] SERVICE LINES
+------------------------------------------------------------------------------
+Line DOS         POS  CPT     Mod  DxPtr  Units    Charge (USD)
+1    2026-10-15  81   80053        A      1               38.00
+2    2026-10-15  81   82947        A      1               12.00
+3    2026-10-15  81   82565        A      1               15.00
+4    2026-10-15  81   85025        A      1               28.00
+5    2026-10-15  81   36415        A      1               10.00
+                                             -------------------
+                                  TOTAL CHARGE        103.00
+                                   AMOUNT PAID          0.00
+
+[SECTION 5] PROVIDER CERTIFICATION
+------------------------------------------------------------------------------
+Signature on file (synthetic). The provider certifies that the services listed
+were rendered and that the information is true and complete.
+
+==============================================================================
+[ATTACHMENT 1 of 1] submitted with CLM-2026-0006
+==============================================================================
+DOC-C006-01 | Laboratory Requisition (submitted with CLM-2026-0006)
+------------------------------------------------------------------------------
+Lab: Meridian Diagnostics Lab (synthetic) | Collection date: 2026-10-15
+Patient: MBR-100063 (62-year-old female) | Diagnosis: E11.9
+  Test ordered                  | Notes
+  ------------------------------+----------------------------------------------
+  Comprehensive metabolic panel | Standard panel (includes glucose, creatinine, BUN, electrolytes, liver enzymes)
+  Glucose, quantitative         | Ordered as individual add-on test
+  Creatinine, blood             | Ordered as individual add-on test
+  CBC with differential         | Routine monitoring
+  Venipuncture                  | One blood draw
+
+(Single specimen collection. No separate repeat draw documented.)
+
+==============================================================================
+END OF CLAIM CLM-2026-0006
+==============================================================================

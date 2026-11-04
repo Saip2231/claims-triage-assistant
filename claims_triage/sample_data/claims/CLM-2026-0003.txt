@@ -1,0 +1,68 @@
+==============================================================================
+HEALTH INSURANCE CLAIM SUBMISSION (SYNTHETIC)
+CMS-1500-style layout, plain-text version
+SYNTHETIC DATA for interview exercise. Fictional people, providers and organizations.
+==============================================================================
+
+[SECTION 0] CLAIM HEADER
+------------------------------------------------------------------------------
+Claim ID                : CLM-2026-0003
+Date received           : 2026-10-22
+Submission format       : EDI 837P + PDF
+Claim frequency code    : 1  (1=original, 7=replacement, 8=void)
+
+[SECTION 1] PATIENT / INSURED
+------------------------------------------------------------------------------
+Member ID               : MBR-100034
+Relationship to insured : Self
+Birth year              : 1972
+Sex                     : M
+
+[SECTION 2] BILLING PROVIDER
+------------------------------------------------------------------------------
+Provider ID             : P-005
+Provider name           : Summit Orthopedic Surgery Center (synthetic)
+Specialty               : Orthopedic Surgery
+Billing NPI             : 9000000005
+Rendering provider NPI  : 9000000005
+Place of service        : 24 - Ambulatory surgery center
+
+[SECTION 3] DIAGNOSIS AND AUTHORIZATION
+------------------------------------------------------------------------------
+Date of service         : 2026-10-12
+A. Primary diagnosis    : M25.561
+B. Secondary diagnosis  : None
+Prior auth number       : None provided
+Emergency indicator     : N
+Attachments submitted   : DOC-C003-01
+
+[SECTION 4] SERVICE LINES
+------------------------------------------------------------------------------
+Line DOS         POS  CPT     Mod  DxPtr  Units    Charge (USD)
+1    2026-10-12  24   29881   RT   A      1           18,500.00
+                                             -------------------
+                                  TOTAL CHARGE     18,500.00
+                                   AMOUNT PAID          0.00
+
+[SECTION 5] PROVIDER CERTIFICATION
+------------------------------------------------------------------------------
+Signature on file (synthetic). The provider certifies that the services listed
+were rendered and that the information is true and complete.
+
+==============================================================================
+[ATTACHMENT 1 of 1] submitted with CLM-2026-0003
+==============================================================================
+DOC-C003-01 | Referral Note (submitted with CLM-2026-0003)
+------------------------------------------------------------------------------
+From: Summit Orthopedic Surgery Center (synthetic) | Date: 2026-10-09
+Patient: MBR-100034 (54-year-old male)
+  | Patient seen for right knee pain. Pain has been present "for a while."
+  | Surgery recommended. Scheduled for arthroscopic procedure on
+  | 2026-10-12.
+  | (No exam findings, no imaging report, no history of conservative
+  | treatment documented.)
+
+
+==============================================================================
+END OF CLAIM CLM-2026-0003
+==============================================================================
