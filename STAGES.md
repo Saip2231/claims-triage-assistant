@@ -22,8 +22,8 @@
 | 🚧 | **Gate A:** all 10 decisions match the golden table | | | ✅ |
 | 5 | Policy parser + explanations + advisories | [stage-05](prompts/stage-05-policy-explanations.md) | `policy.py`, `explain.py`, `advisories.py` | ✅ |
 | 6 | FastAPI backend + error handling | [stage-06](prompts/stage-06-api.md) | `api.py` + API tests | ✅ |
-| 7 | React UI | [stage-07](prompts/stage-07-react-ui.md) | `frontend/` working against the API | ⬜ |
-| 🚧 | **Gate B:** full flow works in your browser | | | ⬜ |
+| 7 | React UI | [stage-07](prompts/stage-07-react-ui.md) | `frontend/` working against the API | ✅ |
+| 🚧 | **Gate B:** full flow works in your browser | | | ✅ |
 | 8 | Tests + hardening | [stage-08](prompts/stage-08-tests-hardening.md) | robustness + end-to-end tests, all green | ⬜ |
 | 9 | README + final CSV + zip | [stage-09-submission](prompts/stage-09-submission.md) | `README.md`, `output/decisions.csv`, zip | ⬜ |
 | 🚧 | **Gate C:** submission zip verified | | | ⬜ |
@@ -72,12 +72,13 @@
 - [x] Serves `frontend/dist` when present; redirects `/` to `/docs` until then
 
 ### Stage 7: React UI
-- [ ] Three upload zones with type validation
-- [ ] Run button, loading state, summary strip
-- [ ] Results table: filter, search, colour-coded decisions
-- [ ] Claim detail drawer: extracted fields, 6-check timeline, explanation, advisories
-- [ ] Download `decisions.csv`
-- [ ] Error banners: no white screens → **Gate B**
+- [x] Three upload zones with type validation
+- [x] Run button, loading state, summary strip (10 · 4 · 2 · 4 confirmed in browser)
+- [x] Results table: filter, search, colour-coded decisions
+- [ ] Claim detail drawer: extracted fields, 6-check timeline, explanation, advisories (re-check during the Stage 9 single-command run)
+- [x] Download `decisions.csv` (10 rows, matches the golden table)
+- [x] Error banners: "Can't reach the triage server" shown, no white screen
+- [x] `npm run typecheck` + `npm run build` clean (vite 6.4.5, 1589 modules) → **Gate B**
 
 ### Stage 8: Hardening
 - [ ] Bad, empty and garbage files → NEEDS_HUMAN rows
@@ -105,3 +106,4 @@
 | 2026-11-04 | 4 | ✅ engine.py, export.py, run_batch.py; 117/117 tests. **Gate A passed:** 10 claims from 20 files, 4 APPROVE / 2 DENY / 4 NEEDS_HUMAN, every row matches the golden table |
 | 2026-11-04 | 5 | ✅ policy.py, advisories.py, explain.py (template, no LLM); 168/168 tests; decisions unchanged; user approved wording. run_batch now reports a locked output file clearly |
 | 2026-11-04 | 6 | ✅ api.py + schemas.py; 181/181 tests, no warnings; curl on CLM-0004 → DENY/ELIG-01/R101 with citation; /docs loads |
+| 2026-11-04 | 7 | ✅ React UI (Vite 6 + TS strict); typecheck + build clean; browser run 20 files → 10·4·2·4; UI CSV matches golden; server-down banner works. **Gate B passed.** Drawer view still to eyeball in Stage 9. Fonts trimmed to Latin subsets |
