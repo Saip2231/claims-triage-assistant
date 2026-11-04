@@ -17,7 +17,7 @@
 | 0 | Setup and environment | [stage-00](prompts/stage-00-setup.md) | folders, venv, deps, sample_data, Node check | ✅ |
 | 1 | Models + reference loader | [stage-01](prompts/stage-01-models-reference.md) | `models.py`, `reference.py` + tests | ✅ |
 | 2 | Claim extraction (PDF + TXT) | [stage-02](prompts/stage-02-extraction.md) | `extract.py` + parity test 10/10 | ✅ |
-| 3 | The 6 checks | [stage-03](prompts/stage-03-checks.md) | `checks.py` + pass/fail test per check | ⬜ |
+| 3 | The 6 checks | [stage-03](prompts/stage-03-checks.md) | `checks.py` + pass/fail test per check | ✅ |
 | 4 | Engine + CLI → decisions.csv | [stage-04](prompts/stage-04-engine-cli.md) | `engine.py`, `export.py`, `run_batch.py` | ⬜ |
 | 🚧 | **Gate A:** all 10 decisions match the golden table | | | ⬜ |
 | 5 | Policy parser + explanations + advisories | [stage-05](prompts/stage-05-policy-explanations.md) | `policy.py`, `explain.py`, `advisories.py` | ⬜ |
@@ -49,11 +49,11 @@
 - [x] PDF parser
 - [x] Parity: TXT == PDF for all 10 claims
 - [x] CLM-0009 rendering NPI is `None`; CLM-0005 has 3 lines; CLM-0003 total is 18500.00
-- [ ] Manual cross-check of `output/extracted_claims.csv` by the user
+- [x] Manual cross-check of `output/extracted_claims.csv` by the user
 
 ### Stage 3: Checks
-- [ ] The 6 check functions are pure
-- [ ] Pass + fail test for each check, plus the R203 and NOT_EVALUATED paths
+- [x] The 6 check functions are pure
+- [x] Pass + fail test for each check, plus the R203 and NOT_EVALUATED paths
 
 ### Stage 4: Engine + CLI
 - [ ] `combine()` priority test
@@ -99,3 +99,5 @@
 | 2026-11-04 | 1 | ✅ models.py + reference.py; test_reference.py 13/13 passed (pytest 9.2.0) |
 | 2026-11-04 | git | First commit pushed to github.com/Saip2231/claims-triage-assistant (private), branch `main` |
 | 2026-11-04 | 2 | ✅ extract.py; test_extract.py 34/34 passed (incl. PDF/TXT parity 10/10). Added scripts/dump_extracted.py for a manual check |
+| 2026-11-04 | 2 | User cross-checked extracted_claims.csv: correct. Stage 2 committed and pushed |
+| 2026-11-04 | 3 | ✅ checks.py (6 pure checks) + factories; test_checks.py 40/40; full suite 87/87 |
