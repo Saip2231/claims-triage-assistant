@@ -24,7 +24,7 @@
 | 6 | FastAPI backend + error handling | [stage-06](prompts/stage-06-api.md) | `api.py` + API tests | ✅ |
 | 7 | React UI | [stage-07](prompts/stage-07-react-ui.md) | `frontend/` working against the API | ✅ |
 | 🚧 | **Gate B:** full flow works in your browser | | | ✅ |
-| 8 | Tests + hardening | [stage-08](prompts/stage-08-tests-hardening.md) | robustness + end-to-end tests, all green | ⬜ |
+| 8 | Tests + hardening | [stage-08](prompts/stage-08-tests-hardening.md) | robustness + end-to-end tests, all green | ✅ |
 | 9 | README + final CSV + zip | [stage-09-submission](prompts/stage-09-submission.md) | `README.md`, `output/decisions.csv`, zip | ⬜ |
 | 🚧 | **Gate C:** submission zip verified | | | ⬜ |
 
@@ -81,9 +81,10 @@
 - [x] `npm run typecheck` + `npm run build` clean (vite 6.4.5, 1589 modules) → **Gate B**
 
 ### Stage 8: Hardening
-- [ ] Bad, empty and garbage files → NEEDS_HUMAN rows
-- [ ] Same claim uploaded as PDF + TXT → deduped (conflict → NEEDS_HUMAN)
-- [ ] Full suite green, ≥ 12 tests
+- [x] Bad, empty and garbage files → NEEDS_HUMAN rows
+- [x] Same claim uploaded as PDF + TXT → deduped (conflict → NEEDS_HUMAN)
+- [x] Full suite green, ≥ 12 tests (203)
+- [x] Static review clean (no PII, no LLM, no Claims-sheet reads, pure checks)
 
 ### Stage 9: Submission
 - [ ] README (one page): run, design, assumptions, 3 limitations, explanation mode = template
@@ -107,3 +108,4 @@
 | 2026-11-04 | 5 | ✅ policy.py, advisories.py, explain.py (template, no LLM); 168/168 tests; decisions unchanged; user approved wording. run_batch now reports a locked output file clearly |
 | 2026-11-04 | 6 | ✅ api.py + schemas.py; 181/181 tests, no warnings; curl on CLM-0004 → DENY/ELIG-01/R101 with citation; /docs loads |
 | 2026-11-04 | 7 | ✅ React UI (Vite 6 + TS strict); typecheck + build clean; browser run 20 files → 10·4·2·4; UI CSV matches golden; server-down banner works. **Gate B passed.** Drawer view still to eyeball in Stage 9. Fonts trimmed to Latin subsets |
+| 2026-11-04 | 8 | ✅ test_robustness.py (20) + test_end_to_end.py (2); **203/203 passed** in 5.1 s; CLI and API CSV byte-identical; static review clean; frontend typecheck + build clean (Latin fonts only, CSS 15 kB) |
