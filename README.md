@@ -167,13 +167,7 @@ The 203 tests cover:
 - messy inputs (empty, blank or unsupported files, missing fields, conflicting copies, broken workbooks);
 - byte-identical CSVs from the CLI and the API.
 
-## Assumptions
 
-- **Eligibility** also needs the premium to be paid through the date of service (policy §2.1).
-- **Duplicates:** only a **paid** earlier claim counts, and only when the new claim is an original (frequency code 1).
-- **Check 1** covers all required fields from policy §3.1, not just the NPI and diagnosis code.
-- **Unknown records:** a member or provider missing from the workbook sends the claim to a human (R203), never to a denial.
-- **Dates** must be `YYYY-MM-DD`. Anything else is treated as missing.
 
 ## Limitations
 
