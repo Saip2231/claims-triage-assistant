@@ -16,7 +16,7 @@
 |---|---|---|---|---|
 | 0 | Setup and environment | [stage-00](prompts/stage-00-setup.md) | folders, venv, deps, sample_data, Node check | ✅ |
 | 1 | Models + reference loader | [stage-01](prompts/stage-01-models-reference.md) | `models.py`, `reference.py` + tests | ✅ |
-| 2 | Claim extraction (PDF + TXT) | [stage-02](prompts/stage-02-extraction.md) | `extract.py` + parity test 10/10 | ⬜ |
+| 2 | Claim extraction (PDF + TXT) | [stage-02](prompts/stage-02-extraction.md) | `extract.py` + parity test 10/10 | ✅ |
 | 3 | The 6 checks | [stage-03](prompts/stage-03-checks.md) | `checks.py` + pass/fail test per check | ⬜ |
 | 4 | Engine + CLI → decisions.csv | [stage-04](prompts/stage-04-engine-cli.md) | `engine.py`, `export.py`, `run_batch.py` | ⬜ |
 | 🚧 | **Gate A:** all 10 decisions match the golden table | | | ⬜ |
@@ -45,10 +45,11 @@
 - [x] Tests green (members, providers, ICD set, benefit rules, PA log, history)
 
 ### Stage 2: Extraction
-- [ ] TXT parser
-- [ ] PDF parser
-- [ ] Parity: TXT == PDF for all 10 claims
-- [ ] CLM-0009 rendering NPI is `None`; CLM-0005 has 3 lines; CLM-0003 total is 18500.00
+- [x] TXT parser
+- [x] PDF parser
+- [x] Parity: TXT == PDF for all 10 claims
+- [x] CLM-0009 rendering NPI is `None`; CLM-0005 has 3 lines; CLM-0003 total is 18500.00
+- [ ] Manual cross-check of `output/extracted_claims.csv` by the user
 
 ### Stage 3: Checks
 - [ ] The 6 check functions are pure
@@ -96,3 +97,5 @@
 | 2026-11-04 | — | Plan, flowchart, CLAUDE.md and stage prompts written |
 | 2026-11-04 | 0 | ✅ Python 3.11.4, Node v24.15.0, npm 11.12.1; deps ok; pytest runs; sample_data has 22 files |
 | 2026-11-04 | 1 | ✅ models.py + reference.py; test_reference.py 13/13 passed (pytest 9.2.0) |
+| 2026-11-04 | git | First commit pushed to github.com/Saip2231/claims-triage-assistant (private), branch `main` |
+| 2026-11-04 | 2 | ✅ extract.py; test_extract.py 34/34 passed (incl. PDF/TXT parity 10/10). Added scripts/dump_extracted.py for a manual check |
