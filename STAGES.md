@@ -18,8 +18,8 @@
 | 1 | Models + reference loader | [stage-01](prompts/stage-01-models-reference.md) | `models.py`, `reference.py` + tests | ✅ |
 | 2 | Claim extraction (PDF + TXT) | [stage-02](prompts/stage-02-extraction.md) | `extract.py` + parity test 10/10 | ✅ |
 | 3 | The 6 checks | [stage-03](prompts/stage-03-checks.md) | `checks.py` + pass/fail test per check | ✅ |
-| 4 | Engine + CLI → decisions.csv | [stage-04](prompts/stage-04-engine-cli.md) | `engine.py`, `export.py`, `run_batch.py` | ⬜ |
-| 🚧 | **Gate A:** all 10 decisions match the golden table | | | ⬜ |
+| 4 | Engine + CLI → decisions.csv | [stage-04](prompts/stage-04-engine-cli.md) | `engine.py`, `export.py`, `run_batch.py` | ✅ |
+| 🚧 | **Gate A:** all 10 decisions match the golden table | | | ✅ |
 | 5 | Policy parser + explanations + advisories | [stage-05](prompts/stage-05-policy-explanations.md) | `policy.py`, `explain.py`, `advisories.py` | ⬜ |
 | 6 | FastAPI backend + error handling | [stage-06](prompts/stage-06-api.md) | `api.py` + API tests | ⬜ |
 | 7 | React UI | [stage-07](prompts/stage-07-react-ui.md) | `frontend/` working against the API | ⬜ |
@@ -56,9 +56,9 @@
 - [x] Pass + fail test for each check, plus the R203 and NOT_EVALUATED paths
 
 ### Stage 4: Engine + CLI
-- [ ] `combine()` priority test
-- [ ] `run_batch.py` writes `output/decisions.csv`
-- [ ] Golden test: 10/10 match → **Gate A**
+- [x] `combine()` priority test
+- [x] `run_batch.py` writes `output/decisions.csv`
+- [x] Golden test: 10/10 match → **Gate A**
 
 ### Stage 5: Policy + explanations
 - [ ] Policy sections parsed (2.1 … 3.8), with a fallback if parsing fails
@@ -101,3 +101,4 @@
 | 2026-11-04 | 2 | ✅ extract.py; test_extract.py 34/34 passed (incl. PDF/TXT parity 10/10). Added scripts/dump_extracted.py for a manual check |
 | 2026-11-04 | 2 | User cross-checked extracted_claims.csv: correct. Stage 2 committed and pushed |
 | 2026-11-04 | 3 | ✅ checks.py (6 pure checks) + factories; test_checks.py 40/40; full suite 87/87 |
+| 2026-11-04 | 4 | ✅ engine.py, export.py, run_batch.py; 117/117 tests. **Gate A passed:** 10 claims from 20 files, 4 APPROVE / 2 DENY / 4 NEEDS_HUMAN, every row matches the golden table |

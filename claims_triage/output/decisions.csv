@@ -1,0 +1,11 @@
+claim_id,decision,rules_fired,reason_codes,explanation
+CLM-2026-0001,APPROVE,,,All checks passed.
+CLM-2026-0002,DENY,DUP-01,R102,"Duplicate of previously paid claim H-1001 (CPT 99214, DOS 2026-10-08, paid 2026-10-13)."
+CLM-2026-0003,NEEDS_HUMAN,PA-01;AMT-01,R401;R901,"CPT 29881 requires prior authorization under plan PLN-SLV-PPO, and no approved authorization covers 2026-10-12. On file: PA-2026-07731 is Pending - clinical information requested; PA-2026-06955 covers CPT 73721, not 29881. Total billed $18,500.00 exceeds the $10,000.00 automatic limit; senior review required."
+CLM-2026-0004,DENY,ELIG-01,R101,Coverage not in force on the date of service 2026-09-30: coverage ended 2026-09-28 (Voluntary disenrollment (moved to employer plan)); premium paid only through 2026-09-28.
+CLM-2026-0005,NEEDS_HUMAN,EMR-01,R801,"Provider P-009 is out-of-network for plan PLN-GLD-PPO. Out-of-network emergency: in-network cost sharing applies, the member must not be balance billed, and human review is required."
+CLM-2026-0006,APPROVE,,,All checks passed.
+CLM-2026-0007,APPROVE,,,All checks passed.
+CLM-2026-0008,NEEDS_HUMAN,PA-01,R401,"CPT 30400 requires prior authorization under plan PLN-GLD-PPO, and no approved authorization covers 2026-10-05."
+CLM-2026-0009,NEEDS_HUMAN,VAL-01;VAL-02,R201;R202,Missing required field(s): rendering provider NPI. Diagnosis code(s) J06.99 not found in the ICD-10 table (codes are never auto-corrected).
+CLM-2026-0010,APPROVE,,,All checks passed.
