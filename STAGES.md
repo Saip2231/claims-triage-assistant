@@ -20,7 +20,7 @@
 | 3 | The 6 checks | [stage-03](prompts/stage-03-checks.md) | `checks.py` + pass/fail test per check | ✅ |
 | 4 | Engine + CLI → decisions.csv | [stage-04](prompts/stage-04-engine-cli.md) | `engine.py`, `export.py`, `run_batch.py` | ✅ |
 | 🚧 | **Gate A:** all 10 decisions match the golden table | | | ✅ |
-| 5 | Policy parser + explanations + advisories | [stage-05](prompts/stage-05-policy-explanations.md) | `policy.py`, `explain.py`, `advisories.py` | ⬜ |
+| 5 | Policy parser + explanations + advisories | [stage-05](prompts/stage-05-policy-explanations.md) | `policy.py`, `explain.py`, `advisories.py` | ✅ |
 | 6 | FastAPI backend + error handling | [stage-06](prompts/stage-06-api.md) | `api.py` + API tests | ⬜ |
 | 7 | React UI | [stage-07](prompts/stage-07-react-ui.md) | `frontend/` working against the API | ⬜ |
 | 🚧 | **Gate B:** full flow works in your browser | | | ⬜ |
@@ -61,9 +61,10 @@
 - [x] Golden test: 10/10 match → **Gate A**
 
 ### Stage 5: Policy + explanations
-- [ ] Policy sections parsed (2.1 … 3.8), with a fallback if parsing fails
-- [ ] Every explanation cites "Section X.Y Title"
-- [ ] Advisories match the golden advisory table
+- [x] Policy sections parsed (2.1 … 3.8), with a fallback if parsing fails
+- [x] Every explanation cites "Section X.Y Title"
+- [x] Advisories match the golden advisory table
+- [x] User reviewed the explanation wording
 
 ### Stage 6: API
 - [ ] `/api/health` and `/api/triage`
@@ -102,3 +103,4 @@
 | 2026-11-04 | 2 | User cross-checked extracted_claims.csv: correct. Stage 2 committed and pushed |
 | 2026-11-04 | 3 | ✅ checks.py (6 pure checks) + factories; test_checks.py 40/40; full suite 87/87 |
 | 2026-11-04 | 4 | ✅ engine.py, export.py, run_batch.py; 117/117 tests. **Gate A passed:** 10 claims from 20 files, 4 APPROVE / 2 DENY / 4 NEEDS_HUMAN, every row matches the golden table |
+| 2026-11-04 | 5 | ✅ policy.py, advisories.py, explain.py (template, no LLM); 168/168 tests; decisions unchanged; user approved wording. run_batch now reports a locked output file clearly |

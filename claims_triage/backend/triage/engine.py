@@ -154,5 +154,12 @@ def triage_files(files: list[tuple[str, bytes]], ref: ReferenceData,
             warnings.append(message)
             rows.append(intake_result(claim_id, message, source_files=names, extracted=fingerprints[0]))
 
+    # Intake rows never reach the checks. If the explainer can word them (TemplateExplainer can), let it.
+    explain_intake = getattr(explainer, "explain_intake", None)
+    if explain_intake:
+        for row in rows:
+            if row.results and row.results[0].check_no == INTAKE_CHECK_NO:
+                row.explanation = explain_intake(row)
+
     rows.sort(key=lambda r: r.claim_id)
     return rows, warnings

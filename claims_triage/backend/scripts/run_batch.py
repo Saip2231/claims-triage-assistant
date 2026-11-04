@@ -6,7 +6,8 @@ Usage (from claims_triage/backend):
 
 Every file in the folder is processed. The PDF and TXT copies of the same claim
 are merged into one row. Exit codes: 0 = done (even if some claims need a
-human), 2 = the workbook could not be used.
+human), 2 = the workbook or claims folder could not be used, 3 = the output
+file is locked (e.g. open in Excel).
 """
 
 from __future__ import annotations
@@ -20,7 +21,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from triage.engine import triage_files  # noqa: E402
+from triage.explain import TemplateExplainer  # noqa: E402
 from triage.export import to_csv  # noqa: E402
+from triage.policy import parse_policy  # noqa: E402
 from triage.reference import WorkbookError, load_reference  # noqa: E402
 
 PROJECT = Path(__file__).resolve().parents[2]
@@ -52,12 +55,19 @@ def main() -> int:
         return 2
     files = [(p.name, p.read_bytes()) for p in sorted(args.claims_dir.iterdir()) if p.is_file()]
 
-    results, warnings = triage_files(files, ref)
+    policy = parse_policy(args.policy.read_bytes() if args.policy.is_file() else None)
+    results, warnings = triage_files(files, ref, explainer=TemplateExplainer(policy, ref))
+    if policy.warning:
+        warnings.append(policy.warning)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    # newline="" keeps the "\n" line endings exactly as to_csv produced them.
-    with args.out.open("w", encoding="utf-8", newline="") as fh:
-        fh.write(to_csv(results))
+    try:
+        # newline="" keeps the "\n" line endings exactly as to_csv produced them.
+        with args.out.open("w", encoding="utf-8", newline="") as fh:
+            fh.write(to_csv(results))
+    except PermissionError:
+        print(f"ERROR: cannot write {args.out}. Is it open in Excel or another program? Close it and run again.")
+        return 3
 
     print(f"{'claim_id':<16} {'decision':<12} {'rules_fired':<16} reason_codes")
     print("-" * 64)
